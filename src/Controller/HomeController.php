@@ -13,7 +13,19 @@ final class HomeController extends AbstractController
     #[Route(path: '/', name: 'home')]
     public function __invoke(): Response
     {
-        // TODO: show a list of all components.
-        return $this->render('home.html.twig');
+        // TODO: make this list dynamic.
+        $components = [
+            ['Logo', 'logo'],
+            ['Page header', 'page-header'],
+            ['Footer link', 'footer-link'],
+            ['Footer', 'footer'],
+        ];
+
+        return $this->render(
+            view: 'home.html.twig',
+            parameters: [
+                'components' => $components,
+            ]
+        );
     }
 }

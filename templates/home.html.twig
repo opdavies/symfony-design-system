@@ -1,1 +1,9 @@
-Home
+<ul>
+    {% for component in components %}
+        <li>
+            <a href="{{ component.1 }}">
+                {{ component.0 }}
+            </a>
+        </li>
+    {% endfor %}
+</ul>
